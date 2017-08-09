@@ -1,0 +1,6 @@
+TODO:
+1. Collisions
+2. Enemy class (Name, health, damage)
+3. Player class
+4. Item class (Name, id)
+5. Weapon: subclass of item.
