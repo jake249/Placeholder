@@ -7,7 +7,7 @@ public class Screen {
 	
 	public static void mainScreen() {
 		try { 
-		    AppGameContainer container = new AppGameContainer(new TileMap("Maps/fr.tmx")); 
+		    AppGameContainer container = new AppGameContainer(new TileMap("Maps/fr.tmx"));  //reads and presents tilemap
 		    container.setDisplayMode(800,600,false); 
 		    container.setAlwaysRender(true);
 		    container.setTargetFrameRate(60);
