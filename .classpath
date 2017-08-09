@@ -2,17 +2,23 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/ibxm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/jinput.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/jnlp.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/jogg-0.0.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/jorbis-0.0.15.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/lwjgl.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/lwjgl_util.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/lwjgl_util_applet.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/natives-linux.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/natives-mac.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/natives-windows.jar"/>
-	<classpathentry kind="lib" path="C:/Users/JacobLuce/Downloads/slick/lib/slick.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/ibxm.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/Weltschmerz/Desktop/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/jinput.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/jnlp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/jogg-0.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/jorbis-0.0.15.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/lwjgl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/lwjgl_util_applet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/natives-linux.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/natives-mac.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/natives-windows.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/slick.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/slick-examples.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Weltschmerz/Desktop/lib/tinylinepp.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
