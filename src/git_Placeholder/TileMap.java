@@ -77,27 +77,28 @@ public class TileMap extends BasicGame {
 	public void update(GameContainer arg0, int arg1) throws SlickException {
 	    Input input = arg0.getInput();
 	    String value = "";
-	    
+
 	    if(input.isKeyDown(Input.KEY_DOWN)) {
-	    	try {
-	    		tileID = 0;
-	    		tileID = map.getTileId(playerX, playerY+32, 0);
-		    	System.out.println(tileID);
-			    value = map.getTileProperty(tileID, "t", "fuck");   
-			    if(value.equals("true") && direction == 1) {
-			    	System.out.println("FUCK!");
-		    		movement = false;
-		    		System.out.println("T");
-		    	 }
-		    	 else {
-		    		value = "false";
-		    		tileID = 0;
-		    		System.out.println("G");
-		    		System.out.println(tileID);
-					movement = true;
+    		tileID = map.getTileId(playerX, playerY+32, 0);
+	    	System.out.println(tileID);
+		    value = map.getTileProperty(tileID, "t", "fuck"); 
+		    
+		    if(value.equals("true") && direction == 1) {
+		    	System.out.println("FUCK!");
+	    		movement = false;
+	    		System.out.println("T");
+	    	 }
+	    	 else {
+	    		System.out.println("G");
+	    		System.out.println(tileID);
+				movement = true;
+				
+				if(direction != 1) {
+		    		direction = 1;
 		    	}
-	    	} catch(Exception e) {
-	    	
+		    	else {
+		    		y-= arg1 * 0.2f;
+		    	}
 	    	}
 	    
 	    }
