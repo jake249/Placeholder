@@ -9,16 +9,8 @@
   </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="50">
-  <properties>
-   <property name="f" type="bool" value="true"/>
-  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3PMQoAIAwDwO46+f/H+gKx4FCVG24KgaRHRAdIGAm7XvWHk6+rrHorAADwpnbBBgAAAACA30xHkCdfECcAAA==
-  </data>
- </layer>
- <layer name="Tile Layer 2" width="50" height="50">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3BAQ0AAADCoPdPbQ43oAAAAAAAAAAAAODfAC7KO00QJwAA
+   H4sIAAAAAAAAC+3UQQ7DIAxEUfbscv/DZpkswB5sgxLpPwmpqQhjcGlrMd0Yo3mzNaxnL1OtxxtKljI/s5dufO+tZWV4z2oPvRyr1kxvRmej1FCVp6jOXc1R5kWs1LvjDKy6d51ztAeZ3OjvIfvubL3R55Xc6jOJer+f6bmaU3XPvTqtO39KZf8rel0pcgf/IPufa7kOjZU9ftmu/QMAAAAAAAAAAAB43ESvOTYQJwAA
   </data>
  </layer>
 </map>
