@@ -1,18 +1,24 @@
 package git_Placeholder;
 import org.newdawn.slick.Image;
+
+import java.util.ArrayList;
+
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;
 
 public class TileMap extends BasicGame {
 	public Image down,up,right,left,uWalk1,uWalk2,dWalk1,dWalk2,rWalk1,rWalk2,lWalk1,lWalk2;
 	private TiledMap map;
 	private String t;
+	int tileID;
 	private int mapX,mapY;
+	private int playerX, playerY;
 	private int x,y;
 	private int tileSize = 32;
 	private int direction;
@@ -20,15 +26,18 @@ public class TileMap extends BasicGame {
 	private boolean movement;
 
 	
-	public TileMap(String t) throws SlickException {
+	public TileMap(String t, int playerX, int playerY) throws SlickException {
 		super("Game");
 		this.t = t;
+		this.mapX = playerX;
+		this.mapY = playerY;
 	}
 
 	@Override
 	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
 	
-		map.render(x-32,y-32,mapX,mapY,arg0.getWidth()/tileSize+32,arg0.getHeight()/tileSize+32);
+		map.render(x-32,y-32,mapX,mapY,arg0.getWidth()/2,arg0.getHeight()/2);
+		
 
 		if(direction == 1) {
 			if(movement == true) {
@@ -67,15 +76,45 @@ public class TileMap extends BasicGame {
 	@Override
 	public void update(GameContainer arg0, int arg1) throws SlickException {
 	    Input input = arg0.getInput();
+	    String value;
 	    
 	    if(input.isKeyDown(Input.KEY_DOWN)) {
-	    	movement = true;
-	    	if(direction != 1) {
-	    		direction = 1;
+	    	try { 
+		    	 tileID = map.getTileId(playerX, playerY+32, 0);
+		    	 System.out.println(tileID);
+			     value = map.getTileProperty(tileID, "t", "fuck");   
+		    	 if(value.equals("true") && direction == 1) {
+		    		 System.out.println("FUCK!");
+		    		 movement = false;
+		    		 System.out.println("T");
+		    	 }
+		    	else {
+		    		value = "false";
+		    		tileID = 0;
+		    		System.out.println("G");
+					movement = true;
+					if(direction != 1) {
+			    		direction = 1;
+			    	}
+			    	else {
+			    		y-= arg1 * 0.2f;
+			    	}
+		    	}
+	    	} catch(Exception e) {
+	    		
+	    		tileID = map.getTileId(playerX, playerY+32, 0);
+	    		value = "false";
+	    		System.out.println("F");
+				movement = true;
+				if(direction != 1) {
+		    		direction = 1;
+		    	}
+		    	else {
+		    		y-= arg1 * 0.2f;
+		    	}
+	    	
 	    	}
-	    	else {
-	    		y-= arg1 * 0.2f;
-	    	}
+	    
 	    }
 	    else if(input.isKeyDown(Input.KEY_UP)) {
 	    	movement = true;
@@ -130,6 +169,22 @@ public class TileMap extends BasicGame {
 	    	mapY--;
 	    	y = 0;
 	    }
+	    int halfWidth = arg0.getWidth()/2;
+		int halfHeight = arg0.getHeight()/2;
+		int halfWidthPixel = halfWidth/tileSize;
+		int halfHeightPixel = halfHeight/tileSize;
+		
+		playerX = mapX + halfWidthPixel;
+		playerY = mapY + halfHeightPixel;
+		
+		if(playerX < 0) {
+			playerX = 0;
+		}
+		
+		if(playerY < 0) {
+			playerY = 0;
+		}
+		
 	}
 
 	@Override
