@@ -58,7 +58,7 @@ public class ItemList {
 			FileReader fileReader = new FileReader(fileName);
 			
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			
+			//While loop to read in the list of items
 			while((line = bufferedReader.readLine()) != null) {
 				if(i == 0) {
 					System.out.println("Setting item count");
