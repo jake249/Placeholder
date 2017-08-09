@@ -6,10 +6,7 @@ public class Character {
 	private int health;
 	private int damage;
 	
-	public void characters(String name, int health, int damage) {
-		this.name = name;
-		this.health = health;
-		this.damage = damage;
+	public Character() {
 	}
 
 	public String getName() {

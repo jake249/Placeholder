@@ -3,9 +3,13 @@ package git_Placeholder;
 public class Weapon extends Item{
 	private int damage;
 	private int durability;
-	public void weapon (int damage, int durability) {
+	public Weapon (int damage, int durability) {
+		super();
 		this.damage = damage;
 		this.durability = durability;
+	}
+	public Weapon () {
+		super();
 	}
 	
 	public int getDamage() {
@@ -20,4 +24,6 @@ public class Weapon extends Item{
 	public void setDurability(int durability) {
 		this.durability = durability;
 	}
+	
+	
 }

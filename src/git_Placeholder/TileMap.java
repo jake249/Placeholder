@@ -1,5 +1,11 @@
 package git_Placeholder;
 import org.newdawn.slick.Image;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
@@ -18,6 +24,8 @@ public class TileMap extends BasicGame {
 	private int direction;
 	private Animation upWalk,downWalk,rightWalk,leftWalk;
 	private boolean movement;
+	private ItemList items;
+	private final String ITEMS_FILE_NAME = "itemList";
 
 	
 	public TileMap(String t) throws SlickException {
@@ -137,6 +145,11 @@ public class TileMap extends BasicGame {
 		map = new TiledMap(t);
 		direction = 1;
 		
+		//load in items
+		ItemList.getInstance().LoadInItems(ITEMS_FILE_NAME);;
+		System.out.println("Working Directory = " +
+	              System.getProperty("user.dir"));
+		
 		down = new Image("Game Assets/pandafront.png");
 		up = new Image("Game Assets/pandaback.png");
 		right = new Image("Game Assets/pandaright.png");
@@ -166,7 +179,9 @@ public class TileMap extends BasicGame {
 		leftWalk = new Animation();
 		leftWalk.addFrame(lWalk1, 150);
 		leftWalk.addFrame(lWalk2, 150);
+	
 	}
+	
 }
 	
 

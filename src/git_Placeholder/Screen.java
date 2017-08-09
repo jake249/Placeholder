@@ -12,7 +12,7 @@ public class Screen {
 		    container.setAlwaysRender(true);
 		    container.setTargetFrameRate(60);
 		    container.isShowingFPS();
-		    container.start(); 
+		    container.start();
 		} catch (SlickException e) { 
 		    e.printStackTrace(); 
 		}
