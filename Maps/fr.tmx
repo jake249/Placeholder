@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="7">
+ <tileset firstgid="1" name="wheat" tilewidth="32" tileheight="32" tilecount="18" columns="3">
+  <image source="../Game Assets/wheat.png" width="96" height="192"/>
+ </tileset>
+ <layer name="Tile Layer 2" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TIQ4AMAgDQJ6w8P/HIrAjwU3sLqmpbRrR8hLeOkNvG9jxFQAAAAAAAACAvxRLoms2ECcAAA==
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TsQqDUBBFwRUETTQJ+v8fm1dYiKCJwWJfmGKarc4tdo6IueiKfuW23GszbIwJmn5xP9jRJOi7YkeboO9bj+K58krQxGdN1PUve9qo61+Ac6YEDQAAAAAAAAD/4g3LNHiXECcAAA==
+  </data>
+ </layer>
+</map>
