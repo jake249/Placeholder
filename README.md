@@ -1,1 +1,2 @@
-# Placeholder
+This is the README
+Have fun!
