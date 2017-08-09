@@ -35,4 +35,13 @@ public class Item {
 	public void setItemType(String itemType) {
 		this.itemType = itemType;
 	}
+	
+	public String toString() {
+		return "Item Name: " + name + "\n" +
+				"Item Description: " + description + "\n" +
+				"Item ID: " + id + "\n" +
+				"Item Type: " + itemType + "\n" +
+				"item Class: " + this.getClass();
+		
+	}
 }

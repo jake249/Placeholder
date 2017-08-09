@@ -76,6 +76,7 @@ public class ItemList {
 					default:
 						tempItem = new Item();
 					}
+					tempItem.setItemType(item[0]);
 					tempItem.setName(item[1]);
 					tempItem.setDescription(item[2]);
 					tempItem.setId(Integer.parseInt(item[3]));
@@ -98,5 +99,9 @@ public class ItemList {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public Item getItemById(int id) {
+		return items[id];
 	}
 }
