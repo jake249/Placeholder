@@ -9,6 +9,9 @@ public class Screen {
 		try { 
 		    AppGameContainer container = new AppGameContainer(new TileMap("Maps/fr.tmx")); 
 		    container.setDisplayMode(800,600,false); 
+		    container.setAlwaysRender(true);
+		    container.setTargetFrameRate(60);
+		    container.isShowingFPS();
 		    container.start(); 
 		} catch (SlickException e) { 
 		    e.printStackTrace(); 
