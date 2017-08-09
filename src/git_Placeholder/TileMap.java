@@ -170,6 +170,7 @@ public class TileMap extends BasicGame {
 		if(playerY < 0) {
 			playerY = 0;
 		}
+		System.out.println(tileID);
 		
 	}
 
