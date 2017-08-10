@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="10">
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="32" tileheight="32" nextobjectid="17">
  <tileset firstgid="1" name="wheat" tilewidth="32" tileheight="32" tilecount="18" columns="3">
   <image source="../Game Assets/wheat.png" width="96" height="192"/>
-  <tile id="17">
+  <tile id="10">
    <properties>
     <property name="t" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="m" type="bool" value="true"/>
    </properties>
   </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="50">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3UQQ7DIAxEUfbscv/DZpkswB5sgxLpPwmpqQhjcGlrMd0Yo3mzNaxnL1OtxxtKljI/s5dufO+tZWV4z2oPvRyr1kxvRmej1FCVp6jOXc1R5kWs1LvjDKy6d51ztAeZ3OjvIfvubL3R55Xc6jOJer+f6bmaU3XPvTqtO39KZf8rel0pcgf/IPufa7kOjZU9ftmu/QMAAAAAAAAAAAB43ESvOTYQJwAA
+   H4sIAAAAAAAAC+3DAQkAAAwEocvw/cMux0DBVVNVVVVVVVVVVdXnD4OQepgQJwAA
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="50" height="50">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3PoQ0AIBDAwPfsvy8SiyzhLukAXTOzJF31Ch8tPlp8tPho8dHio8VHi48WHy0+Wny0+Gjx0eKjxUeLjxYfLT5afLT4aPnlQ9JpAx9je84QJwAA
   </data>
  </layer>
 </map>

@@ -1,4 +1,3 @@
-package git_Placeholder;
 import java.lang.*;
 
 public class Character {

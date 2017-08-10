@@ -1,4 +1,4 @@
-package git_Placeholder;
+
 
 public class Weapon extends Item{
 	private int damage;

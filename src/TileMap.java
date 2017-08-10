@@ -1,74 +1,70 @@
-package git_Placeholder;
+
 import org.newdawn.slick.Image;
-
-import java.util.ArrayList;
-
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.tiled.TiledMap;
 
 public class TileMap extends BasicGame {
 	public Image down,up,right,left,uWalk1,uWalk2,dWalk1,dWalk2,rWalk1,rWalk2,lWalk1,lWalk2;
 	private TiledMap map;
 	private String t;
-	int tileID;
-	private int mapX,mapY;
-	private int playerX, playerY;
 	private int x,y;
+	private int mapX,mapY;
 	private int tileSize = 32;
+	String collision;
+	int ID;
 	private int direction;
 	private Animation upWalk,downWalk,rightWalk,leftWalk;
 	private boolean movement;
 
 	
-	public TileMap(String t, int playerX, int playerY) throws SlickException {
+	public TileMap(String t, int mapX, int mapY) throws SlickException {
 		super("Game");
 		this.t = t;
-		this.mapX = playerX;
-		this.mapY = playerY;
+		this.mapX = mapX;
+		this.mapY = mapY;
 	}
 
 	@Override
 	public void render(GameContainer arg0, Graphics arg1) throws SlickException {
 	
-		map.render(x-32,y-32,mapX,mapY,arg0.getWidth()/2,arg0.getHeight()/2);
+		map.render(x-32,y-32, mapX,mapY, map.getWidth(), map.getHeight());
 		
 
 		if(direction == 1) {
 			if(movement == true) {
-				downWalk.draw(arg0.getWidth()/2+tileSize/2,arg0.getHeight()/2+tileSize/2);
+				downWalk.draw(mapX, mapY);
 			}
 			else {
-				down.draw(arg0.getWidth()/2+tileSize/2,arg0.getHeight()/2+tileSize/2);
+				down.draw(mapX, mapY);
 			}
 		}
 		else if(direction == 2) {
 			if(movement == true) {
-				upWalk.draw(arg0.getWidth()/2+tileSize/2,arg0.getHeight()/2+tileSize/2);
+				upWalk.draw(mapX, mapY);
 			}
 			else {
-				up.draw(arg0.getWidth()/2+tileSize/2,arg0.getHeight()/2+tileSize/2);
+				up.draw(mapX, mapY);
 			}
 		}
 		else if(direction == 3) {
 			if(movement == true) {
-				leftWalk.draw(arg0.getWidth()/2+tileSize/2,arg0.getHeight()/2+tileSize/2);
+				leftWalk.draw(mapX, mapY);
 			}
 			else {
-				left.draw(arg0.getWidth()/2+tileSize/2,arg0.getHeight()/2+tileSize/2);
+				left.draw(mapX, mapY);
 			}
 		}
 		else if(direction == 4) {
 			if(movement == true) {
-				rightWalk.draw(arg0.getWidth()/2+tileSize/2,arg0.getHeight()/2+tileSize/2);
+				rightWalk.draw(mapX, mapY);
 			}
 			else {
-				right.draw(arg0.getWidth()/2+tileSize/2,arg0.getHeight()/2+tileSize/2);
+				right.draw(mapX, mapY);
 			}
 		}
 	}
@@ -76,59 +72,65 @@ public class TileMap extends BasicGame {
 	@Override
 	public void update(GameContainer arg0, int arg1) throws SlickException {
 	    Input input = arg0.getInput();
-	    String value = "";
-
-	    if(input.isKeyDown(Input.KEY_DOWN)) {
-    		tileID = map.getTileId(playerX, playerY+32, 0);
-	    	System.out.println(tileID);
-		    value = map.getTileProperty(tileID, "t", "fuck"); 
-		    
-		    if(value.equals("true") && direction == 1) {
-		    	System.out.println("FUCK!");
-	    		movement = false;
-	    		System.out.println("T");
-	    	 }
-	    	 else {
-	    		System.out.println("G");
-	    		System.out.println(tileID);
-				movement = true;
-				
-				if(direction != 1) {
-		    		direction = 1;
-		    	}
-		    	else {
-		    		y-= arg1 * 0.2f;
-		    	}
-	    	}
 	    
-	    }
-	    else if(input.isKeyDown(Input.KEY_UP)) {
-	    	movement = true;
-	    	if(direction != 2) {
-	    		direction = 2;
+	    if(input.isKeyDown(Input.KEY_DOWN)) {
+	    	direction = 1;
+	    	ID = map.getTileId(mapX, mapY+2, 1);
+	    	collision = map.getTileProperty(ID, "t", "def");
+	    	System.out.println(collision);
+	    	
+	    	
+	    	if(collision.equalsIgnoreCase("true")) {
+	    		movement = false;
 	    	}
 	    	else {
-	    		y+= arg1 * 0.2f;
+	    		movement = true;
+		    	y-= arg1 * 0.2f;
+	    	}
+	    }
+	    else if(input.isKeyDown(Input.KEY_UP)) {
+	    	direction = 2;
+	    	ID = map.getTileId(mapX, mapY-2, 1);
+	    	collision = map.getTileProperty(ID, "t", "def");
+	    	System.out.println(collision);
+	    	
+	    	if(collision.equalsIgnoreCase("true")) {
+	    		movement = false;
+	    	}
+	    	else {
+	    		movement = true;
+		    		y+= arg1 * 0.2f;
 	    	}
 	    }
 	    else if(input.isKeyDown(Input.KEY_LEFT)) {
-	    	movement = true;
-	    	if(direction != 3) {
-	    		direction = 3;
+	    	direction = 3;
+	    	ID = map.getTileId(mapX-2, mapY, 1);
+	    	collision = map.getTileProperty(ID, "t", "def");
+	    	System.out.println(collision);
+	    	
+	    	if(collision.equalsIgnoreCase("true")) {
+	    		movement = false;
 	    	}
 	    	else {
-	    		x+= arg1 * 0.2f;
-	    	}
+	    		movement = true;
+		    		x+= arg1 * 0.2f;
+		    }
 	    }
 	    else if(input.isKeyDown(Input.KEY_RIGHT)) {
-	    	movement = true;
-	    	if(direction != 4) {
-	    		direction = 4;
+	    	direction = 4;
+	    	ID = map.getTileId(mapX+2, mapY, 1);
+	    	collision = map.getTileProperty(ID, "t", "def");
+	    	System.out.println(collision);
+	    	
+	    	if(collision.equalsIgnoreCase("true")) {
+	    		movement = false;
 	    	}
 	    	else {
-	    		x-= arg1 * 0.2f;
-	    	}
+	    		movement = true;
+		    		x-= arg1 * 0.2f;
+		    }
 	    }
+	    
 	    
 	    if (input.isKeyDown(Input.KEY_DOWN) == false && direction == 1 ||
 	    	input.isKeyDown(Input.KEY_UP) == false && direction == 2 ||
@@ -155,23 +157,10 @@ public class TileMap extends BasicGame {
 	    	mapY--;
 	    	y = 0;
 	    }
-	    int halfWidth = arg0.getWidth()/2;
-		int halfHeight = arg0.getHeight()/2;
-		int halfWidthPixel = halfWidth/tileSize;
-		int halfHeightPixel = halfHeight/tileSize;
-		
-		playerX = mapX + halfWidthPixel;
-		playerY = mapY + halfHeightPixel;
-		
-		if(playerX < 0) {
-			playerX = 0;
-		}
-		
-		if(playerY < 0) {
-			playerY = 0;
-		}
-		System.out.println(tileID);
-		
+	   
+	    System.out.println("tileID: " + ID);
+	    System.out.println("X: " + mapX);
+	    System.out.println("Y: " + mapY);
 	}
 
 	@Override
