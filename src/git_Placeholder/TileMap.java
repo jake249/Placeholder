@@ -77,7 +77,7 @@ public class TileMap extends BasicGame {
 	public void update(GameContainer arg0, int arg1) throws SlickException {
 	    Input input = arg0.getInput();
 	    String value = "";
-	    
+	    //this will be different I think I have been fucking with it a tad.
 	    if(input.isKeyDown(Input.KEY_DOWN)) {
 	    	try {
 	    		tileID = 0;
